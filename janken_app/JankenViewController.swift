@@ -28,10 +28,14 @@ class JankenViewController: UIViewController {
     let rockLabel = "グー👊"
     let scissorsLabel = "チョキ✌️"
     let paperLabel = "パー✋"
+    var titleOriginalPosition: CGPoint!
+    var startOriginalPosition: CGPoint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        elemsDisp = [selfHandLabel,rockButton,scissorsButton,paperButton]
+        elemsDisp = [opponentHandLabel, selfHandLabel,rockButton,scissorsButton,paperButton]
+        titleOriginalPosition = titleLabel.frame.origin
+        startOriginalPosition = startButton.frame.origin
         generateView()
     }
 
@@ -42,9 +46,14 @@ class JankenViewController: UIViewController {
         rockButton.setTitle(rockLabel, for:UIControl.State.normal)
         scissorsButton.setTitle(scissorsLabel, for:UIControl.State.normal)
         paperButton.setTitle(paperLabel, for:UIControl.State.normal)
+        
         for elem in elemsDisp {
             elem.isHidden = true
         }
+    }
+    
+    func getRandomHand() {
+        opponentHandLabel.text = hands.randomElement()
     }
     
     @IBAction func clickStartButton(_ sender: Any) {
@@ -53,13 +62,21 @@ class JankenViewController: UIViewController {
                 elem.isHidden = false
             }
             startButton.setTitle(endBtnLabel, for:UIControl.State.normal)
+            UIView.animate(withDuration: 0.3) {
+                        self.startButton.frame.origin = CGPoint(x: 50, y: 100)
+                    }
         }else{
             for elem in elemsDisp {
                 elem.isHidden = true
             }
             startButton.setTitle(startBtnLabel, for:UIControl.State.normal)
+            UIView.animate(withDuration: 0.3) {
+                self.startButton.frame.origin = self.startOriginalPosition
+            }
         }
-        
+    }
+    @IBAction func selectSelfHand(_ sender: Any) {
+        getRandomHand()
     }
     
 }
