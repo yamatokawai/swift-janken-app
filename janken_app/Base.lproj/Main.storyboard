@@ -29,7 +29,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At2-Qv-NIJ">
-                                <rect key="frame" x="76" y="133" width="240" height="21"/>
+                                <rect key="frame" x="76" y="110" width="240" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -58,6 +58,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zAR-WS-Ip5">
+                                <rect key="frame" x="159" y="139" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="clickStartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RCc-4p-gbK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,6 +77,7 @@
                         <outlet property="rockButton" destination="NNS-hi-pPv" id="YZf-RT-Vyj"/>
                         <outlet property="scissorsButton" destination="Czk-Q2-QBf" id="PYP-tv-I97"/>
                         <outlet property="selfHandLabel" destination="Mvj-hF-vE7" id="3D9-v9-QI0"/>
+                        <outlet property="startButton" destination="zAR-WS-Ip5" id="Pt0-Uw-bEx"/>
                         <outlet property="titleLabel" destination="At2-Qv-NIJ" id="mO0-CF-eIB"/>
                     </connections>
                 </viewController>
