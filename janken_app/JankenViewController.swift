@@ -20,14 +20,12 @@ class JankenViewController: UIViewController {
     
     let titleText = "じゃんけん"
     let hands = ["👊","✌️","✋"]
-//    let opponentHand: String = hands.randomElement()
     let rockLabel = "グー👊"
     let scissorsLabel = "チョキ✌️"
     let paperLabel = "パー✋"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("aaa")
         generateView()
     }
 
